@@ -1,0 +1,6 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>C25 Live</title>
+<style>body{background:#0a0a0a;color:#e2e8f0;font-family:monospace;padding:20px}.g{display:grid;grid-template-columns:1fr 1fr;gap:15px}.c{background:#111;padding:15px;border:1px solid #333}.m{font-size:2rem;font-weight:bold}</style></head>
+<body><h1>C25 Live Command (Penguin)</h1><div class="g">
+<div class="c"><div>CPU</div><div class="m" id="cpu">0%</div></div>
+<div class="c"><div>Memory</div><div class="m" id="mem">0%</div></div>
+</div><script>setInterval(async()=>{try{const d=await(await fetch('/api')).json();document.getElementById('cpu').innerText=d.cpu+'%';document.getElementById('mem').innerText=d.mem+'%';}catch(e){}},2000);</script></body></html>
